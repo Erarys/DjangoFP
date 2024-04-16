@@ -1,0 +1,15 @@
+{% extends 'FPtask/base.html' %}
+
+{% block title %}
+    Get and upper
+{% endblock %}
+
+
+{% block body %}
+    {{ upper_text }}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="text">
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

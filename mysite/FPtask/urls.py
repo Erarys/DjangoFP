@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import test
+from .views import GetAndUpperTextView
 
 app_name = "fp"
 
 urlpatterns = [
-    path('', test, name="test")
+    path('', GetAndUpperTextView.as_view(), name="get_and_upper")
 ]
