@@ -1,0 +1,36 @@
+{% extends 'FPtask/base.html' %}
+
+{% block title %}
+    ReactiveX List
+{% endblock %}
+{% block style %}
+    <style>
+        body {
+            margin: 50px;
+        }
+    </style>
+
+{% endblock %}
+{% block body %}
+    {% if next %}
+        <div>
+            {{ next }}
+        </div>
+    {% endif %}
+    {% if error %}
+        <div>
+            {{ error }}
+        </div>
+    {% endif %}
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="data">
+            <select name="action">
+                <option value="del">Delete</option>
+                <option value="add">Add</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}
